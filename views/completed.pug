@@ -1,0 +1,22 @@
+extends index
+
+block body_content
+  article
+    header
+      h1 Completed Tasks
+    
+    unless tasks.length > 0
+      .notice
+        h1 You have no task available
+
+    ol
+      each val in tasks
+        if val.status == 'completed'
+          li.item-group.completed-task 
+            span #{val.task}
+
+    
+    each error in errors
+      p.error= error
+    each info in infos
+      p.info= info

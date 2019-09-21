@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  header
+    .heading
+      h1= appname
+      p Welcome to #{appname} application developed by #[strong #{author}], Enjoy!! 
+    
+  main
+    .article.content
+      header
+        h2 Brightside
+      nav
+        a(href='/', class= home ? 'active' : '') Home
+        a(href='/todos/',class= todos ? 'active' : '') Todo Lists
+        a(href='/completed/',class= completed ? 'active' : '') Completed Tasks
+      
+      block body_content
+        .body
+          h2 Lorem, ipsum dolor sit amet
+          p consectetur adipisicing elit. Dolores saepe odio natus harum quas inventore vero molestiae nesciunt repellendus dicta dolorem repudiandae recusandae, veritatis totam labore magnam vitae quae. Quidem.
+          p consectetur adipisicing elit. Dolores saepe odio natus harum quas inventore vero molestiae nesciunt repellendus dicta dolorem repudiandae recusandae, veritatis totam labore magnam vitae quae. Quidem.
+          p consectetur adipisicing elit. Dolores saepe odio natus harum quas inventore vero molestiae nesciunt repellendus dicta dolorem repudiandae recusandae, veritatis totam labore magnam vitae quae. Quidem.
+
+
+

@@ -1,0 +1,31 @@
+extends index
+
+block body_content
+  .control-pane
+    .all-complete
+      a(href='/completed/mark-all-completed/') #[button mark all as completed]
+
+    .newtask 
+      form(action="/todos/add-task/", method='post')
+        label
+          input(type="text", name="task", placeholder="Add new task", required)
+
+        input(type="submit", value="Add task")
+  hr(role='separator')
+
+  .task-list
+    ol
+      each val in tasks
+        li.item-group
+          span(class= val.status): a(href='/todos/mark-as-completed/'+val._id+'/') #{val.status == 'completed'?'Task completed':'Mark as completed'}
+          span.item #{val.task} 
+          span.delete: a(href='/todos/delete/'+val._id+'/') delete
+    
+  unless tasks.length > 0
+    article
+      h1.notice Add an activity to your list
+  
+  each error in errors
+    p.error= error
+  each info in infos
+    p.info= info
