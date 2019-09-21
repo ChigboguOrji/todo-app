@@ -4,23 +4,21 @@ block content
   header
     .heading
       h1= appname
-      p Welcome to #{appname} application developed by #[strong #{author}], Enjoy!! 
+      p Welcome to #{appname} developed by #[strong #[a(href='https://github.com/ChigboguOrji') #{author}]], Enjoy!! 
     
   main
     .article.content
-      header
-        h2 Brightside
       nav
         a(href='/', class= home ? 'active' : '') Home
         a(href='/todos/',class= todos ? 'active' : '') Todo Lists
         a(href='/completed/',class= completed ? 'active' : '') Completed Tasks
       
       block body_content
-        .body
-          h2 Lorem, ipsum dolor sit amet
-          p consectetur adipisicing elit. Dolores saepe odio natus harum quas inventore vero molestiae nesciunt repellendus dicta dolorem repudiandae recusandae, veritatis totam labore magnam vitae quae. Quidem.
-          p consectetur adipisicing elit. Dolores saepe odio natus harum quas inventore vero molestiae nesciunt repellendus dicta dolorem repudiandae recusandae, veritatis totam labore magnam vitae quae. Quidem.
-          p consectetur adipisicing elit. Dolores saepe odio natus harum quas inventore vero molestiae nesciunt repellendus dicta dolorem repudiandae recusandae, veritatis totam labore magnam vitae quae. Quidem.
+        .body.home
+          h1 #{appname} revisited
+          p This is a "#{appname}" built with expressjs, mongodb, pug, #[br]it is a classical representation of no frontend framework app.
+          p Bundled with basic but sophisticated crud operations
+          p The full source code is available at #[em #[a(href='https://github.com/ChigboguOrji/todo.git') github.com/ChigboguOrji/todo]]
 
 
 
