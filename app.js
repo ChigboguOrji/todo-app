@@ -50,11 +50,11 @@ app.use(session({
 app.use(cookieParser());
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
+app.disable('x-powered-by');
 
-app.locals.appname = 'Todo';
+app.locals.appname = 'Todo application';
 app.locals.author = 'Chigbogu';
-var enteries = [];
-app.locals.enteries = enteries;
+
 
 app.use('/', indexRouter);
 app.use('/todos/', todosRouter);
